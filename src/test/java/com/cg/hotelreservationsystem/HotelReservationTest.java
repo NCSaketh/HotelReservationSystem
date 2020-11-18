@@ -45,38 +45,37 @@ public class HotelReservationTest {
     @Test
     public void whenStayed1Day_CheapestHotelShouldBe_Lakewood()
     {
-        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        cust=hotelReservation.findCheapestHotel("Regular","12.05.2020", "13.05.2020");
         assertEquals(110, cust.getBill());
     }
 
     @Test
     public void whenStayed1Day_CheapestHotelShouldCost_110()
     {
-        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        cust=hotelReservation.findCheapestHotel("Regular","12.05.2020", "13.05.2020");
         assertEquals("Lakewood", cust.getHotelName());
     }
 
     @Test
     public void whenStayed1DayOnWeekendCheapestHotelShouldBeBridgeWood()
     {
-        cust=hotelReservation.findCheapestHotel("12.09.2020", "13.09.2020");
+        cust=hotelReservation.findCheapestHotel("Regular","12.09.2020", "13.09.2020");
         assertEquals("Bridgewood", cust.getHotelName());
     }
 
     @Test
     public void whenStayed1DayOnWeekendCheapestHotelShouldCost_50()
     {
-        cust=hotelReservation.findCheapestHotel("12.09.2020", "13.09.2020");
+        cust=hotelReservation.findCheapestHotel("Regular","12.09.2020", "13.09.2020");
         assertEquals(50, cust.getBill());
     }
 
     //Rating Testing With DummyHotel
-
     @Test
     public void whenStayed1DayCheapestHotelShouldBeDummyHotel()
     {
         hotelReservation.addHotel("DummyHotel", 110,90,80,80,5);
-        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        cust=hotelReservation.findCheapestHotel("Regular","12.05.2020", "13.05.2020");
         assertEquals("DummyHotel", cust.getHotelName());
     }
 
@@ -84,7 +83,25 @@ public class HotelReservationTest {
     @Test
     public void whenStayed1DayMaxRatedHotelShouldBeRidgeWood()
     {
-        cust=hotelReservation.bestRatedHotel("12.05.2020", "13.05.2020");
+        cust=hotelReservation.bestRatedHotel("Regular","12.05.2020", "13.05.2020");
         assertEquals("Ridgewood", cust.getHotelName());
+    }
+
+    //Testing for correct output for staying 1 day as Reward Cust
+
+    //Weekday Rate
+    @Test
+    public void whenStayedWeekdayCheapestHotelShouldCost80()
+    {
+        cust=hotelReservation.findCheapestHotel("Reward","12.05.2020", "13.05.2020");
+        assertEquals(80, cust.getBill());
+    }
+
+    //Weekend Rate
+    @Test
+    public void whenStayedWeekendCheapestHotelShouldCost80()
+    {
+        cust=hotelReservation.findCheapestHotel("Reward","12.09.2020", "13.09.2020");
+        assertEquals(80, cust.getBill());
     }
 }
