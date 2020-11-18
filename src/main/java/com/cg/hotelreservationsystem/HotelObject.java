@@ -1,17 +1,5 @@
 package com.cg.hotelreservationsystem;
 
-<<<<<<< HEAD
-public class HotelObject{
-    public String hotelName;				//Obj Attributes
-    public int rate_regular;
-    public String cust_type="regular";		//Default=regular
-
-    //Constructor
-    public HotelObject(String hotelName, int rate_regular, String cust_type) {
-        this.hotelName = hotelName;
-        this.rate_regular = rate_regular;
-        this.cust_type = cust_type;
-=======
 public class HotelObject {
 
     public String hotelName;				//Obj Attributes
@@ -26,7 +14,6 @@ public class HotelObject {
 
     public HotelObject(String hotelName) {
         this.hotelName = hotelName;
->>>>>>> UC2_FindCheapestHotel
     }
 
     @Override
@@ -43,19 +30,8 @@ public class HotelObject {
 
         System.out.println("------------------------------------------------------");
         System.out.println("Hotel Name: "+hotelName);
-<<<<<<< HEAD
-        System.out.println("Regular Rate: "+rate_regular);
-<<<<<<< HEAD
-        System.out.println("Customer Type: "+cust_type);
-        System.out.println("------------------------------------------------------");
-        System.out.println();
-    }
-}
-=======
-=======
         System.out.println("Regular Weekday Rate: "+rateWeekdayRegular);
         System.out.println("Regular Weekend Rate: "+rateWeekendRegular);
->>>>>>> UC3_AddWeekDayWeekendRates
         System.out.println("------------------------------------------------------");
         System.out.println();
     }
@@ -76,4 +52,3 @@ public class HotelObject {
         this.rateWeekdayRegular = rate_regular;
     }
 }
->>>>>>> UC2_FindCheapestHotel

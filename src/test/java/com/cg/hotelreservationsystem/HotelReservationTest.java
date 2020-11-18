@@ -9,15 +9,10 @@ import static org.junit.Assert.assertTrue;
 import org.junit.Before;
 import org.junit.Test;
 
-import static org.junit.Assert.assertTrue;
-
 public class HotelReservationTest {
 
     private HotelReservation hotelReservation;
-<<<<<<< HEAD
-=======
     private Customer cust;
->>>>>>> UC2_FindCheapestHotel
 
     @Before
     public void init() {
@@ -37,19 +32,7 @@ public class HotelReservationTest {
     @Test
     public void whenBridgewoodAdded_ShouldReturnTrue()
     {
-<<<<<<< HEAD
-        assertTrue(hotelReservation.addHotel("Bridgewood", 160));
-<<<<<<< HEAD
-    }
-
-    @Test
-    public void whenRidgewoodAdded_ShouldReturnTrue()
-    {
-        assertTrue(hotelReservation.addHotel("Ridgewood", 220));
-=======
-=======
         assertTrue(hotelReservation.addHotel("Bridgewood", 160,50));
->>>>>>> UC3_AddWeekDayWeekendRates
     }
 
     @Test
@@ -71,6 +54,5 @@ public class HotelReservationTest {
     {
         cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
         assertEquals("Lakewood", cust.getHotelName());
->>>>>>> UC2_FindCheapestHotel
     }
 }

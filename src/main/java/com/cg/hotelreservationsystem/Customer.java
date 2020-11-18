@@ -43,4 +43,3 @@ public class Customer extends HotelObject {
         this.bill = bill;
     }
 }
-
