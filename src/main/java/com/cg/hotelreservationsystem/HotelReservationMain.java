@@ -2,6 +2,7 @@ package com.cg.hotelreservationsystem;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 import java.util.Scanner;
 
 public class HotelReservationMain {
@@ -25,6 +26,16 @@ public class HotelReservationMain {
         Hotel hotel = new Hotel(hotelName, rate);
         hotelList.add(hotel);
         return hotelList;
+    }
+
+    //UC2 : Finding Cheapest Hotel for given date range
+    public Hotel findCheapestHotel(String startDate, String endDate) {
+        Optional<Hotel> cheapestHotel = hotelList.stream()
+                .filter(h -> h.startDate.compareTo(startDate) > 0 && h.endDate.compareTo(endDate) < 0)
+                .reduce((hotel1, hotel2) -> hotel1.rate < hotel2.rate ? hotel1 : hotel2);
+        if (cheapestHotel.isPresent())
+            return cheapestHotel.get();
+        return null;
     }
 
 }
