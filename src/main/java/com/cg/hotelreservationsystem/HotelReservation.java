@@ -40,6 +40,18 @@ public class HotelReservation {
         }
     }
 
+    public Date[] stringDateConvereter(String start_date, String end_date) {
+        try {
+            Date dateArr[]=new Date[2];
+            dateArr[0]= new SimpleDateFormat("DD.MM.yyyy").parse(start_date);
+            dateArr[1]= new SimpleDateFormat("DD.MM.yyyy").parse(end_date);
+            return dateArr;
+        }catch(ParseException exception){
+            exception.printStackTrace();
+        }
+        return null;
+    }
+
     public int daysRented(Date startDate, Date endDate) {
 
         long time_diff = startDate.getTime() - endDate.getTime();
@@ -68,35 +80,54 @@ public class HotelReservation {
         return weekArr;
     }
 
+    public Customer bestRatedHotel(String start_date, String end_date) {
+
+        Date dateArr[]=stringDateConvereter(start_date, end_date);
+        Date startDate= dateArr[0];
+        Date endDate= dateArr[1];
+
+        int daysStayed=daysRented(startDate, endDate);
+        int noOfWeekdays=checkWeekdayWeekend(startDate, endDate)[0];
+        int noOfWeekends=checkWeekdayWeekend(startDate, endDate)[1];
+        for(HotelObject hotel: hotelList) {
+            int totalBill = noOfWeekdays*hotel.rateWeekdayRegular+noOfWeekends*hotel.rateWeekendRegular;
+            hotel.totalBill=totalBill;
+        }
+
+        Optional<HotelObject> cheapestHotelOpt = hotelList.stream().max((Comparator
+                .comparingInt(HotelObject::getRating))
+        );
+
+        HotelObject cheapestHotel = cheapestHotelOpt.get();
+        int bill=daysStayed*cheapestHotel.getrateWeekdayRegular();
+
+        return new Customer(cheapestHotel.hotelName, daysStayed, bill);
+    }
+
     public Customer findCheapestHotel(String start_date, String end_date) {
 
-        try {
-            Date startDate= new SimpleDateFormat("DD.MM.yyyy").parse(start_date);
-            Date endDate= new SimpleDateFormat("DD.MM.yyyy").parse(end_date);
+        Date dateArr[]=stringDateConvereter(start_date, end_date);
+        Date startDate= dateArr[0];
+        Date endDate= dateArr[1];
 
-            int daysStayed=daysRented(startDate, endDate);
-            int noOfWeekdays=checkWeekdayWeekend(startDate, endDate)[0];
-            int noOfWeekends=checkWeekdayWeekend(startDate, endDate)[1];
+        int daysStayed=daysRented(startDate, endDate);
+        int noOfWeekdays=checkWeekdayWeekend(startDate, endDate)[0];
+        int noOfWeekends=checkWeekdayWeekend(startDate, endDate)[1];
 
-            for(HotelObject hotel: hotelList) {
-                int totalBill = noOfWeekdays*hotel.rateWeekdayRegular+noOfWeekends*hotel.rateWeekendRegular;
-                hotel.totalBill=totalBill;
-            }
-
-            Optional<HotelObject> cheapestHotelOpt = hotelList.stream().min((Comparator.comparingInt(
-                    HotelObject::getTotalBill)
-                    .thenComparing(HotelObject::getRating))
-            );
-
-            HotelObject cheapestHotel = cheapestHotelOpt.get();
-            int bill=daysStayed*cheapestHotel.getrateWeekdayRegular();
-
-            return new Customer(cheapestHotel.hotelName, daysStayed, bill);
-
-        }catch(ParseException exception){
-            exception.printStackTrace();
+        for(HotelObject hotel: hotelList) {
+            int totalBill = noOfWeekdays*hotel.rateWeekdayRegular+noOfWeekends*hotel.rateWeekendRegular;
+            hotel.totalBill=totalBill;
         }
-        return null;
+
+        Optional<HotelObject> cheapestHotelOpt = hotelList.stream().min((Comparator.comparingInt(
+                HotelObject::getTotalBill)
+                .thenComparing(HotelObject::getRating))
+        );
+
+        HotelObject cheapestHotel = cheapestHotelOpt.get();
+        int bill=daysStayed*cheapestHotel.getrateWeekdayRegular();
+
+        return new Customer(cheapestHotel.hotelName, daysStayed, bill);
     }
 
     public static void main( String[] args )
