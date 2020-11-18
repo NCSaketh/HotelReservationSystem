@@ -33,6 +33,10 @@ public class HotelObject {
         System.out.println("Rating "+rating+" stars added.");
     }
 
+    public int getRating() {
+        return (-1)*rating;
+    }
+
     public void display() {				//Method for displaying all details
 
         System.out.println("------------------------------------------------------");

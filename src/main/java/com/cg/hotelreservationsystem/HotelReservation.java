@@ -83,8 +83,10 @@ public class HotelReservation {
                 hotel.totalBill=totalBill;
             }
 
-            Optional<HotelObject> cheapestHotelOpt = hotelList.stream().min(Comparator.comparingInt(
-                    HotelObject::getTotalBill));
+            Optional<HotelObject> cheapestHotelOpt = hotelList.stream().min((Comparator.comparingInt(
+                    HotelObject::getTotalBill)
+                    .thenComparing(HotelObject::getRating))
+            );
 
             HotelObject cheapestHotel = cheapestHotelOpt.get();
             int bill=daysStayed*cheapestHotel.getrateWeekdayRegular();
