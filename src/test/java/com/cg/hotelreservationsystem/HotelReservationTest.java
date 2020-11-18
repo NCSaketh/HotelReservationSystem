@@ -3,38 +3,56 @@ package com.cg.hotelreservationsystem;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
 
 public class HotelReservationTest {
 
-    HotelReservationMain hotelReservationMain;
+    private HotelReservation hotelReservation;
+    private Customer cust;
 
     @Before
-    public void init(){
-        hotelReservationMain = new HotelReservationMain();
+    public void init() {
+        hotelReservation = new HotelReservation();
+        hotelReservation.addHotel("Lakewood", 110);
+        hotelReservation.addHotel("Bridgewood", 160);
+        hotelReservation.addHotel("Ridgewood", 220);
+    }
+
+    //Testing for creation of 3 hotels
+    @Test
+    public void whenLakewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Lakewood",110));
     }
 
     @Test
-    public void givenHotel_WhenAdded_ShoudlAddHotel(){
-        Hotel hotel1 = new Hotel("LakeWood",110);
-        Hotel hotel2 = new Hotel("BridgeWood",160);
-        Hotel hotel3 = new Hotel("RidgeWood",220);
-
-        hotelReservationMain.hotelList.add(hotel1);
-        hotelReservationMain.hotelList.add(hotel2);
-        hotelReservationMain.hotelList.add(hotel3);
-        Assert.assertEquals(3, hotelReservationMain.hotelList.size());
+    public void whenBridgewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Bridgewood", 160));
     }
 
     @Test
-    public void givenHotelList_ShouldReturnCheapestHotelInGivenDateRange() {
-        Hotel hotel1 = new Hotel("LakeWood",110,"11-10-2020","12-10-2020");
-        Hotel hotel2 = new Hotel("BridgeWood",160, "11-10-2020","12-10-2020");
-        Hotel hotel3 = new Hotel("RidgeWood",220,"11-10-2020","12-10-2020");
+    public void whenRidgewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Ridgewood", 220));
+    }
 
-        hotelReservationMain.hotelList.add(hotel1);
-        hotelReservationMain.hotelList.add(hotel2);
-        hotelReservationMain.hotelList.add(hotel3);
+    //Testing for correct output for staying 1 day
+    @Test
+    public void whenStayed1Day_CheapestHotelShouldBe_Lakewood()
+    {
+        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        assertEquals(110, cust.getBill());
+    }
 
-        Assert.assertEquals(110, hotelReservationMain.findCheapestHotel("11-10-2020","12-10-2020"));
+    @Test
+    public void whenStayed1Day_CheapestHotelShouldCost_110()
+    {
+        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        assertEquals("Lakewood", cust.getHotelName());
     }
 }
