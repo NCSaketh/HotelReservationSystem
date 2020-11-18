@@ -22,21 +22,22 @@ public class HotelReservationTest {
     @Before
     public void init() {
         hotelReservation = new HotelReservation();
-        hotelReservation.addHotel("Lakewood", 110);
-        hotelReservation.addHotel("Bridgewood", 160);
-        hotelReservation.addHotel("Ridgewood", 220);
+        hotelReservation.addHotel("Lakewood", 110,90);
+        hotelReservation.addHotel("Bridgewood", 160,50);
+        hotelReservation.addHotel("Ridgewood", 220,150);
     }
 
     //Testing for creation of 3 hotels
     @Test
     public void whenLakewoodAdded_ShouldReturnTrue()
     {
-        assertTrue(hotelReservation.addHotel("Lakewood",110));
+        assertTrue(hotelReservation.addHotel("Lakewood",110,90));
     }
 
     @Test
     public void whenBridgewoodAdded_ShouldReturnTrue()
     {
+<<<<<<< HEAD
         assertTrue(hotelReservation.addHotel("Bridgewood", 160));
 <<<<<<< HEAD
     }
@@ -46,12 +47,15 @@ public class HotelReservationTest {
     {
         assertTrue(hotelReservation.addHotel("Ridgewood", 220));
 =======
+=======
+        assertTrue(hotelReservation.addHotel("Bridgewood", 160,50));
+>>>>>>> UC3_AddWeekDayWeekendRates
     }
 
     @Test
     public void whenRidgewoodAdded_ShouldReturnTrue()
     {
-        assertTrue(hotelReservation.addHotel("Ridgewood", 220));
+        assertTrue(hotelReservation.addHotel("Ridgewood", 220,150));
     }
 
     //Testing for correct output for staying 1 day
