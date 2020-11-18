@@ -6,6 +6,8 @@ public class HotelObject {
     public int rating;
     public int rateWeekdayRegular;
     public int rateWeekendRegular;
+    public int rateWeekdayReward;
+    public int rateWeekendReward;
     public int totalBill=0;
 
     //Constructor
@@ -33,6 +35,12 @@ public class HotelObject {
         System.out.println("Rating "+rating+" stars added.");
     }
 
+    public void addRewardRate(int rateWeekdayReward,int rateWeekendReward) {
+        this.rateWeekdayReward=rateWeekdayReward;
+        this.rateWeekendReward=rateWeekendReward;
+        System.out.println("Reward Weekday/Weekend Rates Updated");
+    }
+
     public int getRating() {
         return (-1)*rating;
     }
@@ -43,6 +51,8 @@ public class HotelObject {
         System.out.println("Hotel Name: "+hotelName);
         System.out.println("Regular Weekday Rate: "+rateWeekdayRegular);
         System.out.println("Regular Weekend Rate: "+rateWeekendRegular);
+        System.out.println("Reward Weekday Rate: "+rateWeekdayReward);
+        System.out.println("Reward Weekend Rate: "+rateWeekendReward);
         System.out.println("------------------------------------------------------");
         System.out.println();
     }
