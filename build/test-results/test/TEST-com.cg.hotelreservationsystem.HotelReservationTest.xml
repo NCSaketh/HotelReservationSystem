@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-18T19:03:41" hostname="LAPTOP-M4C7MB0K" time="0.048">
   <properties/>
   <testcase name="whenStayed1Day_CheapestHotelShouldBe_Lakewood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.036"/>
@@ -6,12 +7,25 @@
   <testcase name="whenBridgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002"/>
   <testcase name="whenLakewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.001"/>
   <testcase name="whenRidgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.005"/>
+=======
+<testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-18T19:20:05" hostname="LAPTOP-M4C7MB0K" time="0.023">
+  <properties/>
+  <testcase name="whenStayed1Day_CheapestHotelShouldBe_Lakewood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.015"/>
+  <testcase name="whenStayed1Day_CheapestHotelShouldCost_110" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002"/>
+  <testcase name="whenBridgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.001"/>
+  <testcase name="whenLakewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.001"/>
+  <testcase name="whenRidgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002"/>
+>>>>>>> UC4_FindCheapestByRates
   <system-out><![CDATA[Weekend Rates Updated
 Weekend Rates Updated
 Weekend Rates Updated
+Incorrect format.
+Incorrect format.
 Weekend Rates Updated
 Weekend Rates Updated
 Weekend Rates Updated
+Incorrect format.
+Incorrect format.
 Weekend Rates Updated
 Weekend Rates Updated
 Weekend Rates Updated

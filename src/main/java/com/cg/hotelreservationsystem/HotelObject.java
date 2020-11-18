@@ -5,6 +5,7 @@ public class HotelObject {
     public String hotelName;				//Obj Attributes
     public int rateWeekdayRegular;
     public int rateWeekendRegular;
+    public int totalBill=0;
 
     //Constructor
     public HotelObject(String hotelName, int rate_regular) {
@@ -50,5 +51,9 @@ public class HotelObject {
 
     public void setrateWeekdayRegular(int rate_regular) {
         this.rateWeekdayRegular = rate_regular;
+    }
+
+    public int getTotalBill() {
+        return totalBill;
     }
 }
