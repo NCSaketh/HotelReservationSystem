@@ -4,24 +4,36 @@ import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
 
+import static org.junit.Assert.assertTrue;
+
 public class HotelReservationTest {
 
-    HotelReservationMain hotelReservationMain;
+    private HotelReservation hotelReservation;
 
     @Before
-    public void init(){
-        hotelReservationMain = new HotelReservationMain();
+    public void init() {
+        hotelReservation = new HotelReservation();
+        hotelReservation.addHotel("Lakewood", 110);
+        hotelReservation.addHotel("Bridgewood", 160);
+        hotelReservation.addHotel("Ridgewood", 220);
+    }
+
+    //Testing for creation of 3 hotels
+    @Test
+    public void whenLakewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Lakewood",110));
     }
 
     @Test
-    public void givenHotel_WhenAdded_ShoudlAddHotel(){
-        Hotel hotel1 = new Hotel("LakeWood",110);
-        Hotel hotel2 = new Hotel("BridgeWood",160);
-        Hotel hotel3 = new Hotel("RidgeWood",220);
+    public void whenBridgewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Bridgewood", 160));
+    }
 
-        hotelReservationMain.hotelList.add(hotel1);
-        hotelReservationMain.hotelList.add(hotel2);
-        hotelReservationMain.hotelList.add(hotel3);
-        Assert.assertEquals(3, hotelReservationMain.hotelList.size());
+    @Test
+    public void whenRidgewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Ridgewood", 220));
     }
 }
