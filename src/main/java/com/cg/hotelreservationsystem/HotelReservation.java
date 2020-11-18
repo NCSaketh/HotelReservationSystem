@@ -2,7 +2,12 @@ package com.cg.hotelreservationsystem;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Calendar;
+import java.util.Comparator;
+import java.util.Date;
+import java.util.Optional;
+import java.util.Scanner;
 
 public class HotelReservation {
 
@@ -20,10 +25,11 @@ public class HotelReservation {
         hotelList.add(hotel);
     }
 
-    public boolean addHotel(String hotelName, int rateWeekdayRegular,int rateWeekendRegular) {
+    public boolean addHotel(String hotelName, int rateWeekdayRegular,int rateWeekendRegular, int rating) {
 
         HotelObject hotel = new HotelObject(hotelName,rateWeekdayRegular);
         hotel.setWeekendRates(rateWeekendRegular);
+        hotel.addRating(rating);
         addToList(hotel);
         return true;
     }
@@ -96,9 +102,9 @@ public class HotelReservation {
 
         //Default entries
         HotelReservation buildObj = new HotelReservation();
-        buildObj.addHotel("Lakewood", 110,90);
-        buildObj.addHotel("Bridgewood", 160,50);
-        buildObj.addHotel("Ridgewood", 220,150);
+        buildObj.addHotel("Lakewood", 110,90,3);
+        buildObj.addHotel("Bridgewood", 160,50,4);
+        buildObj.addHotel("Ridgewood", 220,150,5);
 
         System.out.println( "Welcome to Hotel Reservation Program" );
 
@@ -125,8 +131,10 @@ public class HotelReservation {
                 int rateWeekday = sc.nextInt();
                 System.out.print("Enter Weekend rate of rooms: ");
                 int rateWeekendRegular = sc.nextInt();
+                System.out.print("Enter Rating of Hotel: ");
+                int rating = sc.nextInt();
 
-                buildObj.addHotel(hotelName, rateWeekdayRegular, rateWeekendRegular);
+                buildObj.addHotel(hotelName, rateWeekdayRegular, rateWeekendRegular, rating);
                 break;
             }
             case "2": {
