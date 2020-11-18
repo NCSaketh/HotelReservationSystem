@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="11" skipped="0" failures="8" errors="0" timestamp="2020-11-18T20:07:05" hostname="LAPTOP-M4C7MB0K" time="0.068">
+<testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="11" skipped="0" failures="8" errors="0" timestamp="2020-11-18T20:14:47" hostname="LAPTOP-M4C7MB0K" time="0.064">
   <properties/>
-  <testcase name="whenStayedWeekdayCheapestHotelShouldCost80" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.036">
+  <testcase name="whenStayedWeekdayCheapestHotelShouldCost80" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.032">
     <failure message="java.lang.AssertionError: expected:&lt;80&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;80&gt; but was:&lt;0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -58,7 +58,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="whenStayed1DayCheapestHotelShouldBeDummyHotel" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.004">
+  <testcase name="whenStayed1DayCheapestHotelShouldBeDummyHotel" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.005">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[DummyHotel]&gt; but was:&lt;[Ridgewood]&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[DummyHotel]&gt; but was:&lt;[Ridgewood]&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
@@ -170,7 +170,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="whenStayed1DayOnWeekendCheapestHotelShouldBeBridgeWood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.003">
+  <testcase name="whenStayed1DayOnWeekendCheapestHotelShouldBeBridgeWood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.005">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[Br]idgewood&gt; but was:&lt;[R]idgewood&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Br]idgewood&gt; but was:&lt;[R]idgewood&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
@@ -280,7 +280,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="whenStayed1DayOnWeekendCheapestHotelShouldCost_50" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.004">
+  <testcase name="whenStayed1DayOnWeekendCheapestHotelShouldCost_50" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.003">
     <failure message="java.lang.AssertionError: expected:&lt;50&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;50&gt; but was:&lt;0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -339,8 +339,8 @@
   </testcase>
   <testcase name="whenBridgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002"/>
   <testcase name="whenLakewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.001"/>
-  <testcase name="whenRidgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002"/>
-  <testcase name="whenStayedWeekendCheapestHotelShouldCost80" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.002">
+  <testcase name="whenRidgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.003"/>
+  <testcase name="whenStayedWeekendCheapestHotelShouldCost80" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.003">
     <failure message="java.lang.AssertionError: expected:&lt;80&gt; but was:&lt;0&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;80&gt; but was:&lt;0&gt;
 	at org.junit.Assert.fail(Assert.java:88)
 	at org.junit.Assert.failNotEquals(Assert.java:834)
@@ -397,7 +397,7 @@
 	at java.base/java.lang.Thread.run(Thread.java:834)
 </failure>
   </testcase>
-  <testcase name="whenStayed1DayMaxRatedHotelShouldBeRidgeWood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.005">
+  <testcase name="whenStayed1DayMaxRatedHotelShouldBeRidgeWood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.003">
     <failure message="org.junit.ComparisonFailure: expected:&lt;[Ridg]ewood&gt; but was:&lt;[Lak]ewood&gt;" type="org.junit.ComparisonFailure">org.junit.ComparisonFailure: expected:&lt;[Ridg]ewood&gt; but was:&lt;[Lak]ewood&gt;
 	at org.junit.Assert.assertEquals(Assert.java:115)
 	at org.junit.Assert.assertEquals(Assert.java:144)
