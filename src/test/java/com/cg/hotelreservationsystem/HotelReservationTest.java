@@ -55,4 +55,5 @@ public class HotelReservationTest {
         cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
         assertEquals("Lakewood", cust.getHotelName());
     }
+
 }
