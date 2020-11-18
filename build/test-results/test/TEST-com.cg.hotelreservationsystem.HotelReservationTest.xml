@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<<<<<<< HEAD
 <testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2020-11-18T18:01:20" hostname="LAPTOP-M4C7MB0K" time="0.016">
   <properties/>
   <testcase name="whenBridgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.014"/>
+=======
+<testsuite name="com.cg.hotelreservationsystem.HotelReservationTest" tests="5" skipped="0" failures="0" errors="0" timestamp="2020-11-18T18:06:41" hostname="LAPTOP-M4C7MB0K" time="0.045">
+  <properties/>
+  <testcase name="whenStayed1Day_CheapestHotelShouldBe_Lakewood" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.042"/>
+  <testcase name="whenStayed1Day_CheapestHotelShouldCost_110" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.0"/>
+  <testcase name="whenBridgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.0"/>
+>>>>>>> UC2_FindCheapestHotel
   <testcase name="whenLakewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.0"/>
   <testcase name="whenRidgewoodAdded_ShouldReturnTrue" classname="com.cg.hotelreservationsystem.HotelReservationTest" time="0.0"/>
   <system-out><![CDATA[]]></system-out>

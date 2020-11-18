@@ -3,12 +3,21 @@ package com.cg.hotelreservationsystem;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertTrue;
+
+import org.junit.Before;
+import org.junit.Test;
 
 import static org.junit.Assert.assertTrue;
 
 public class HotelReservationTest {
 
     private HotelReservation hotelReservation;
+<<<<<<< HEAD
+=======
+    private Customer cust;
+>>>>>>> UC2_FindCheapestHotel
 
     @Before
     public void init() {
@@ -29,11 +38,35 @@ public class HotelReservationTest {
     public void whenBridgewoodAdded_ShouldReturnTrue()
     {
         assertTrue(hotelReservation.addHotel("Bridgewood", 160));
+<<<<<<< HEAD
     }
 
     @Test
     public void whenRidgewoodAdded_ShouldReturnTrue()
     {
         assertTrue(hotelReservation.addHotel("Ridgewood", 220));
+=======
+    }
+
+    @Test
+    public void whenRidgewoodAdded_ShouldReturnTrue()
+    {
+        assertTrue(hotelReservation.addHotel("Ridgewood", 220));
+    }
+
+    //Testing for correct output for staying 1 day
+    @Test
+    public void whenStayed1Day_CheapestHotelShouldBe_Lakewood()
+    {
+        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        assertEquals(110, cust.getBill());
+    }
+
+    @Test
+    public void whenStayed1Day_CheapestHotelShouldCost_110()
+    {
+        cust=hotelReservation.findCheapestHotel("12.05.2020", "13.05.2020");
+        assertEquals("Lakewood", cust.getHotelName());
+>>>>>>> UC2_FindCheapestHotel
     }
 }
